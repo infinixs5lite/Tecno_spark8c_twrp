@@ -7,23 +7,23 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from TECNO-KG5k device
-$(call inherit-product, device/tecno/TECNO-KG5k/device.mk)
+# Inherit some common twrp stuff.
+$(call inherit-product, vendor/twr/config/common.mk)
 
-PRODUCT_DEVICE := TECNO-KG5k
-PRODUCT_NAME := omni_TECNO-KG5k
+# Inherit from KG5k device
+$(call inherit-product, device/tecno/KG5k/device.mk)
+
+PRODUCT_DEVICE := KG5k
+PRODUCT_NAME := twrp_KG5k
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO KG5k
 PRODUCT_MANUFACTURER := tecno
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="KG5k-user 11 RP1A.201005.001 394 release-keys"
 
 BUILD_FINGERPRINT := TECNO/F062/TECNO-KG5k:11/RP1A.201005.001/GL-V040-20220328:user/release-keys
