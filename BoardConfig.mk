@@ -151,3 +151,24 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_DEVICE_VERDION := BUILD BY KELVIN
+
+# PBRP
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_PATCH_AVB2 := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
+PB_TORCH_PATH := "/sys/class/leds/flashlight"
+
+# SHRP
+SHRP_PATH := device/tecno/KG5k
+SHRP_MAINTAINER := kelvin
+SHRP_DEVICE_CODE := KG5k
+SHRP_FLASH := 1
+SHRP_FONP_1 := /sys/class/leds/flashlight/brightness
+SHRP_FLASH_MAX_BRIGHTNESS := 2047
+SHRP_NOTCH := true
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+SHRP_REC := /dev/block/by-name/boot
+SHRP_DARK := true
+SHRP_OFFICIAL := false
